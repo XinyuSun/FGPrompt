@@ -1,0 +1,6 @@
+habitat_baselines:
+  rl:
+    ppo:
+      goal_backbone: none
+      backbone: fast_resnet9
+  num_environments: 10

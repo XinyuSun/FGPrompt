@@ -1,0 +1,14 @@
+habitat_baselines:
+  rl:
+    success_reward: 10.0
+    slack_reward: -0.01
+
+
+habitat:
+  env_task: GymHabitatEnvX
+  task:
+    reward_measure: distance_to_view
+    success_measure: view_match
+    measurements: [distance_to_goal, success, spl, soft_spl, distance_to_view, view_match, view_angle]
+    
+    sensors: [imagegoal_sensor_v2]

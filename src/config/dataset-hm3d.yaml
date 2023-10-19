@@ -1,0 +1,3 @@
+habitat:
+  dataset:
+    data_path: data/datasets/imagenav/hm3d/v1/{split}/{split}.json.gz

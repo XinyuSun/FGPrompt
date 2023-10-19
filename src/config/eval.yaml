@@ -1,0 +1,14 @@
+habitat_baselines:
+  rl:
+    ppo:
+      random_crop: False
+      rgb_color_jitter: 0.0
+  eval:
+    use_ckpt_config: False
+
+habitat:
+  environment:
+    max_episode_steps: 500
+  task:
+    imagegoal_sensor_v2:
+      sampling_type: uniform

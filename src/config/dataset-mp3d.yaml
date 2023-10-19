@@ -1,0 +1,3 @@
+habitat:
+  dataset:
+    data_path: data/datasets/imagenav/mp3d/v1/{split}/{split}.json.gz

@@ -1,0 +1,36 @@
+habitat_baselines:
+  rl:
+    policy:
+      name: NavNetPolicy 
+    ppo:
+      # para for policy network
+      backbone: fast_resnet9
+      goal_backbone: fast_resnet9
+      rnn_type: GRU
+      num_recurrent_layers: 2
+
+      num_steps: 128
+
+      hidden_size: 128
+      input_size: 128
+      visual_encoder_embedding_size: 512
+      goal_embedding_size: 128
+
+      visual_obs_inputs: ['rgb', "imagegoal_sensor_v2"]
+
+      random_crop: False
+      rgb_color_jitter: 0.0
+      tie_inputs_and_goal_param: False
+
+      task_type_embed: False
+      task_type_embed_size: 64
+
+      enable_feature_matching: False
+
+      # para for flim fusion
+      film_reduction: "none"
+      film_layers: [0,1,2,3]
+
+habitat:
+  simulator:
+    turn_angle: 30

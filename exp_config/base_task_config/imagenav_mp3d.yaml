@@ -1,0 +1,33 @@
+habitat:
+  environment:
+    max_episode_steps: 500
+    type: mp3d
+  simulator:
+    scene:
+      "data/scene_datasets/mp3d/ARNzJeq3xxb/ARNzJeq3xxb.glb"
+    agent_0:
+      sensors: ['rgb_sensor']
+    habitat_sim_v0:
+      gpu_device_id: 0
+    rgb_sensor:
+      width: 256
+      height: 256
+  task:
+    type: Nav-v0
+    end_on_success: True
+    reward_measure: "distance_to_goal_reward"
+    success_measure: "spl"
+
+
+    sensors: ['imagegoal_sensor']
+
+    measurements: ["distance_to_goal", "success", "spl", "soft_spl", "distance_to_goal_reward"]
+    success:
+      success_distance: 1.0
+  dataset:
+    type: PointNav-v1
+    split: train
+    data_path: data/datasets/pointnav/mp3d/v1/{split}/{split}.json.gz
+    clip_goal_feature: data/datasets_subtasknav/datasetv1/goal_clip_features.db
+    task_path: [data/datasets_subtasknav/task0/same_level_v2,data/datasets_subtasknav/task1/same_level_v2,data/datasets_subtasknav/task5/diff_level_v6,data/datasets_subtasknav/task6/diff_level_v5,data/datasets_subtasknav/task7/diff_level_v6,data/datasets_subtasknav/task6/gothroughdoor_v2]
+  
