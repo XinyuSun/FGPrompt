@@ -24,6 +24,7 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 -f https://download.py
 
 # install habitat-lab and habitat-baselines
 cd habitat-lab
+git checkout 1f7cfbdd3debc825f1f2fd4b9e1a8d6d4bc9bfc7
 pip install -e habitat-lab 
 pip install -e habitat-baselines
 ```
