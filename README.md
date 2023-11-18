@@ -107,9 +107,9 @@ run.py --overwrite \
 ### 4.1 Download the Trained Model to Reproduce the Results 👯‍♀️
 |Name|SR|SPL|
 |-|:-:|:-:|
-|[Mid-fusion-r9](https://tmp.link/f/652fd40756fad)|90.7%|62.1%|
-|[Early-fusion-r9](https://tmp.link/f/6530d3689c6b8)|90.4%|66.5%|
-|[Early-fusion-r50](https://tmp.link/f/652fd421b02d9)|94.2%|68.5%|
+|[Mid-fusion-r9](https://github.com/XinyuSun/FGPrompt/releases/download/v0.0.1/mid-fusion-r9.pth)|90.7%|62.1%|
+|[Early-fusion-r9](https://github.com/XinyuSun/FGPrompt/releases/download/v0.0.1/early-fusion-r9.pth)|90.4%|66.5%|
+|[Early-fusion-r50](https://github.com/XinyuSun/FGPrompt/releases/download/v0.0.1/early-fusion-r50.pth)|94.2%|68.5%|
 
 Eval the midfusion model!
 
