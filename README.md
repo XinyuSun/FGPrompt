@@ -44,7 +44,7 @@ docker run -it --name "fgprompt-docker" -v `pwd`:/fgprompt --shm-size=32g --gpus
 | ObjectNav   |   Gibson     | val    |  [objectnav_gibson_val](https://utexas.box.com/s/wu28ms025o83ii4mwfljot1soj5dc7qo)    | `./data/datasets/zer/objectnav/gibson/v1/` | -->
 
 ### 2.1 Download Datasets 📑
-Download the `dataset.zip` file from [tmp.link](https://tmp.link/f/652fd1c43786d) and unarchive it into `data/dataset`
+Download the `dataset.zip` file from [google drive](https://drive.google.com/file/d/1XNElxwOCUO8BDFO3U1g3wZTzcgjPeCdC/view?usp=drive_link) and unarchive it into `data/dataset`
 
 For gibson dataset, we borrow the episodes generated from [`ZER`](https://github.com/ziadalh/zero_experience_required) to train our agent. We then follow the original [imagenav paper](https://github.com/facebookresearch/image-goal-nav-dataset) to test our well-trained agent on the testing episodes. We organize all datasets as follows:
 
