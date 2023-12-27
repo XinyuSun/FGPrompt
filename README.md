@@ -1,5 +1,13 @@
 # FGPrompt 🤖
 🙌 Official implementation of NeurIPS 2023 accepted paper ["FGPrompt: Fine-grained Goal Prompting for Image-goal Navigation"](https://xinyusun.github.io/fgprompt-pages)
+<br>
+<p>
+    <a href="https://arxiv.org/abs/2310.07473"><img src="https://img.shields.io/badge/arxiv-2310.07473-A61E24?logo=arxiv&logoColor=red"></a>
+    <a href="https://neurips.cc/virtual/2023/poster/70452"><img src="https://img.shields.io/badge/neurips-poster-8A5F99?logo=neutralinojs"></a>
+    <a href="https://xinyusun.github.io/fgprompt-pages"><img src="https://img.shields.io/badge/project-page-0C7B34?logo=probot"></a>
+    <a href="https://xinyusun.github.io/fgprompt-pages"><img src="https://img.shields.io/badge/click-8A2BE2"></a>
+    <a href="https://www.easycounter.com/"><img src="https://www.easycounter.com/counter.php?xinyusun" border="0" alt="Free Hit Counters"></a>
+</p>
 
 ## 0. Overview
 We aim to tackle the image-goal navigation task, in which the agent is required to reason the goal location from where a picture is shot. We leverage fine-grained and high-resolution feature maps in the goal image as prompts to perform conditioned embedding, which preserves detailed information in the goal image and guides the observation encoder to pay attention to goal-relevant regions. Compared with existing methods on the image-goal navigation benchmark, our method **brings significant performance improvement** on 3 benchmark datasets (i.e., Gibson, MP3D, and HM3D).
