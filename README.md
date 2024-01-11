@@ -1,5 +1,13 @@
 # FGPrompt 🤖
 🙌 Official implementation of NeurIPS 2023 accepted paper ["FGPrompt: Fine-grained Goal Prompting for Image-goal Navigation"](https://xinyusun.github.io/fgprompt-pages)
+<br>
+<p>
+    <a href="https://arxiv.org/abs/2310.07473"><img src="https://img.shields.io/badge/arxiv-2310.07473-A61E24?logo=arxiv&logoColor=red"></a>
+    <a href="https://neurips.cc/virtual/2023/poster/70452"><img src="https://img.shields.io/badge/neurips-poster-8A5F99?logo=neutralinojs"></a>
+    <a href="https://xinyusun.github.io/fgprompt-pages"><img src="https://img.shields.io/badge/project-page-0C7B34?logo=probot"></a>
+    <a href="https://xinyusun.github.io/fgprompt-pages"><img src="https://img.shields.io/badge/click-8A2BE2"></a>
+    <a href="https://www.easycounter.com/"><img src="https://www.easycounter.com/counter.php?xinyusun" border="0" alt="Free Hit Counters"></a>
+</p>
 
 ## 0. Overview
 We aim to tackle the image-goal navigation task, in which the agent is required to reason the goal location from where a picture is shot. We leverage fine-grained and high-resolution feature maps in the goal image as prompts to perform conditioned embedding, which preserves detailed information in the goal image and guides the observation encoder to pay attention to goal-relevant regions. Compared with existing methods on the image-goal navigation benchmark, our method **brings significant performance improvement** on 3 benchmark datasets (i.e., Gibson, MP3D, and HM3D).
@@ -24,6 +32,7 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 -f https://download.py
 
 # install habitat-lab and habitat-baselines
 cd habitat-lab
+git checkout 1f7cfbdd3debc825f1f2fd4b9e1a8d6d4bc9bfc7
 pip install -e habitat-lab 
 pip install -e habitat-baselines
 ```
@@ -43,7 +52,7 @@ docker run -it --name "fgprompt-docker" -v `pwd`:/fgprompt --shm-size=32g --gpus
 | ObjectNav   |   Gibson     | val    |  [objectnav_gibson_val](https://utexas.box.com/s/wu28ms025o83ii4mwfljot1soj5dc7qo)    | `./data/datasets/zer/objectnav/gibson/v1/` | -->
 
 ### 2.1 Download Datasets 📑
-Download the `dataset.zip` file from [tmp.link](https://tmp.link/f/652fd1c43786d) and unarchive it into `data/dataset`
+Download the `dataset.zip` file from [google drive](https://drive.google.com/file/d/1XNElxwOCUO8BDFO3U1g3wZTzcgjPeCdC/view?usp=drive_link) and unarchive it into `data/dataset`
 
 For gibson dataset, we borrow the episodes generated from [`ZER`](https://github.com/ziadalh/zero_experience_required) to train our agent. We then follow the original [imagenav paper](https://github.com/facebookresearch/image-goal-nav-dataset) to test our well-trained agent on the testing episodes. We organize all datasets as follows:
 
@@ -106,9 +115,9 @@ run.py --overwrite \
 ### 4.1 Download the Trained Model to Reproduce the Results 👯‍♀️
 |Name|SR|SPL|
 |-|:-:|:-:|
-|[Mid-fusion-r9](https://tmp.link/f/652fd40756fad)|90.7%|62.1%|
-|[Early-fusion-r9](https://tmp.link/f/6530d3689c6b8)|90.4%|66.5%|
-|[Early-fusion-r50](https://tmp.link/f/652fd421b02d9)|94.2%|68.5%|
+|[Mid-fusion-r9](https://github.com/XinyuSun/FGPrompt/releases/download/v0.0.1/mid-fusion-r9.pth)|90.7%|62.1%|
+|[Early-fusion-r9](https://github.com/XinyuSun/FGPrompt/releases/download/v0.0.1/early-fusion-r9.pth)|90.4%|66.5%|
+|[Early-fusion-r50](https://github.com/XinyuSun/FGPrompt/releases/download/v0.0.1/early-fusion-r50.pth)|94.2%|68.5%|
 
 Eval the midfusion model!
 
