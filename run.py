@@ -23,7 +23,8 @@ from src import (
     environment,
     metric,
     sensor,
-    trainer, 
+    trainer,
+    dataset,
     utils
 )
 

@@ -98,7 +98,7 @@ MAGNUM_LOG=quiet HABITAT_SIM_LOG=quiet python -m torch.distributed.launch \
 --nproc_per_node=4 --master_port=15244 --nnodes=1 \
 --node_rank=0 --master_addr=127.0.0.1 \
 run.py --overwrite \
---exp-config exp_config/ddppo_imagenav_gibson.yaml,policy,reward,dataset,sensors,early-fuison \
+--exp-config exp_config/ddppo_imagenav_gibson.yaml,policy,reward,dataset,sensors,early-fusion \
 --run-type train --model-dir results/imagenav/early-fusion
 ```
 
@@ -144,8 +144,32 @@ habitat_baselines.eval_ckpt_path_dir results/imagenav/early-fusion-r50/ckpts/ear
 habitat_baselines.rl.ppo.backbone resnet50
 ```
 
-### 4.2 Eval the Model Trained on Your Machine 🕺🏼
+### 4.2 Cross Domain Evaluation 🕺🏼
+```bash
+# train on gibson, eval on hm3d
+# early-fusion-r50
+MAGNUM_LOG=quiet HABITAT_SIM_LOG=quiet python -m torch.distributed.launch \
+--nproc_per_node=1 --master_port=15244 --nnodes=1 \
+--node_rank=0 --master_addr=127.0.0.1 \
+run.py \
+--exp-config exp_config/ddppo_imagenav_gibson.yaml,policy,reward,dataset-hm3d,sensors,early-fusion,eval \
+--run-type eval --model-dir results/imagenav/early-fusion-r50 \
+habitat_baselines.eval_ckpt_path_dir results/imagenav/early-fusion-r50/ckpts/early-fusion-r50.pth \
+habitat_baselines.rl.ppo.backbone resnet50 \
+habitat_baselines.eval.split val_easy # choose from [val_easy, val_hard, val_medium]
 
+# train on gibson, eval on mp3d
+# early-fusion-r50
+MAGNUM_LOG=quiet HABITAT_SIM_LOG=quiet python -m torch.distributed.launch \
+--nproc_per_node=1 --master_port=15244 --nnodes=1 \
+--node_rank=0 --master_addr=127.0.0.1 \
+run.py \
+--exp-config exp_config/ddppo_imagenav_gibson.yaml,policy,reward,dataset-mp3d,sensors,early-fusion,eval \
+--run-type eval --model-dir results/imagenav/early-fusion-r50 \
+habitat_baselines.eval_ckpt_path_dir results/imagenav/early-fusion-r50/ckpts/early-fusion-r50.pth \
+habitat_baselines.rl.ppo.backbone resnet50 \
+habitat_baselines.eval.split test_easy # choose from [test_easy, test_hard, test_medium]
+```
 
 ## Cite This Paper! 🤗
 ```

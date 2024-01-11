@@ -1,3 +1,4 @@
 habitat:
   dataset:
+    type: ImageNav-v1
     data_path: data/datasets/imagenav/mp3d/v1/{split}/{split}.json.gz
