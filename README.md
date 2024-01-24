@@ -17,6 +17,10 @@ We aim to tackle the image-goal navigation task, in which the agent is required 
 ## 1. Install 🚀
 ### 1.1 Install habitat-lab 🛰️
 ```bash
+# clone our repo
+git clone https://github.com/XinyuSun/FGPrompt.git
+cd FGPrompt
+
 # clone habitat-lab code
 git submodule init
 git submodule update
@@ -38,8 +42,7 @@ pip install -e habitat-baselines
 ```
 ### 1.2 Install other requirements 🍔
 ```bash
-git clone https://github.com/XinyuSun/FGPrompt.git
-cd FGPrompt
+cd ..
 pip install -r requirements.txt
 ```
 
