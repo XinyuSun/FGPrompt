@@ -38,7 +38,9 @@ pip install -e habitat-baselines
 ```
 ### 1.2 Install other requirements 🍔
 ```bash
-pip install requirements.txt
+git clone https://github.com/XinyuSun/FGPrompt.git
+cd FGPrompt
+pip install -r requirements.txt
 ```
 
 We also provide a docker image for reproduce convenience
