@@ -1,4 +1,6 @@
 habitat:
+  environment:
+    type: hm3d
   dataset:
     type: ImageNav-v1
     data_path: data/datasets/imagenav/hm3d/v1/{split}/{split}.json.gz

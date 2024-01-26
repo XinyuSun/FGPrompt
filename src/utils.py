@@ -161,7 +161,7 @@ def get_config(exp_config, opts, run_type, model_dir, overwrite, note, debug, gl
         elif ds_type == "mp3d":
             scene = getattr(config.habitat, 'debug_scenes', ['pRbA3pwrgk9'])
         elif ds_type == "hm3d":
-            scene = getattr(config.habitat, 'debug_scenes', ['*'])
+            scene = getattr(config.habitat, 'debug_scenes', ['00001-UVdNNRcVyV1'])
         else:
             scene = getattr(config.habitat, 'debug_scenes', ['NRsmXFcVTbN'])
 

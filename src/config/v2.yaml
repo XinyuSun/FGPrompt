@@ -1,0 +1,19 @@
+habitat:
+  simulator:
+    forward_step_size: 0.25
+    tilt_angle: 30
+    turn_angle: 30
+    agent_0:
+      sensors: ['rgb_sensor']
+      height: 0.88
+      radius: 0.18
+    habitat_sim_v0:
+      allow_sliding: False
+    rgb_sensor:
+      height: 120 # 480
+      width: 160 # 640
+      hfov: 79
+      position: [0, 0.88, 0]
+  dataset:
+    type: ImageNav-v1
+    data_path: data/datasets/imagenav/hm3d/v2/{split}/{split}.json.gz
